@@ -45,7 +45,7 @@ var model = undefined;
 cocoSsd.load().then(function (loadedModel) {
   model = loadedModel;
   
-  // show demo section now model is ready to use.
+  // show cam
   camSection.classList.remove('invisible');
 });
 
@@ -54,7 +54,7 @@ var children = [];
 function predictWebcam() {
   model.detect(video).then(function (predictions) {
 
-    // remove any highlighting we did previous frame.
+    // remove any highlighting
     for (let i = 0; i < children.length; i++) {
       liveView.removeChild(children[i]);
     }
